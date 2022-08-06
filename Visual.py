@@ -5,7 +5,7 @@ import plotly.express as px
 from bubble import bubbleSort
 from mergeSort import mergeSort
 from counting import count_sort
-from bucket import bucketSort
+from radix import radixSort
 from quicksort import quick_sort
 from insertion import insertionSort
 
@@ -40,7 +40,7 @@ print("Count total", count)
 
 # time bucket sort takes
 start = time.time()
-bucketSort(numbers)
+radixSort(numbers)
 end = time.time()
 bucket = (end - start) * 1000
 print("Bucket total", bucket)
