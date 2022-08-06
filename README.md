@@ -43,6 +43,6 @@ Though there are many more classes of algorithms based on this criterion, we bel
 
 
 
-![image](https://user-images.githubusercontent.com/72497582/183259362-3a99eaf9-762a-4393-8857-9a93caa2b9f1.png)
+<img width="1431" alt="Screen Shot 2022-08-06 at 5 50 12 PM" src="https://user-images.githubusercontent.com/98000652/183267173-daeacc48-ffac-4b96-b644-cacdaad8306e.png">
 
  
