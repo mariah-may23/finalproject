@@ -10,7 +10,7 @@ from quicksort import quick_sort
 from insertion import insertionSort
 
 # store algorithms to be used
-SortingAlgo = ['MergeSort', 'BubbleSort', 'Counting Sort']
+SortingAlgo = ['MergeSort', 'QuickSort', 'BubbleSort', 'Insertion Sort', 'RadixSort', 'Counting Sort']
 
 # get user's numbers
 numbers = input("Enter the numbers of the SortingAlgo (ex: 3,6,1)")
@@ -42,8 +42,8 @@ print("Count total", count)
 start = time.time()
 radixSort(numbers)
 end = time.time()
-bucket = (end - start) * 1000
-print("Bucket total", bucket)
+radix = (end - start) * 1000
+print("Bucket total", radix)
 
 # time quick sort takes
 start = time.time()
@@ -61,13 +61,13 @@ print("Insertion total", insertion)
 
 
 # store times
-timeTaken = [merge, bubble, count]
+timeTaken = [merge, quick, bubble, insertion, radix, count]
 
 pd.options.plotting.backend = "plotly"
 
 # create dataframe
-df = pd.DataFrame(dict(Sorting=['MergeSort', 'BubbleSort', 'CountingSort'],
-                       TimeComplex=['LINEARITHMIC (nlogn)', 'QUADRATIC (n^2)', 'LINEAR (n)']))
+df = pd.DataFrame(dict(Sorting=['MergeSort', 'QuickSort', 'BubbleSort', 'Insertion Sort', 'RadixSort', 'Counting Sort'],
+                       TimeComplex=['LINEARITHMIC (nlogn)', 'LINEARITHMIC (nlogn)', 'QUADRATIC (n^2)', 'QUADRATIC (n^2)', 'LINEAR (n)', 'LINEAR (n)']))
 
 # creating the figure
 """ 
@@ -75,7 +75,7 @@ df = pd.DataFrame(dict(Sorting=['MergeSort', 'BubbleSort', 'CountingSort'],
     'labels' allows you to name the axis
     'hover_name' allows to to store a title for the bar when it is hovered over
 """
-fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='Sorting', labels={'x': 'Algorithm', 'y': 'Time (ms)'},
+fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='TimeComplex', labels={'x': 'Algorithm', 'y': 'Time (ms)'},
              hover_name='TimeComplex')
 
-fig.show()  # show
+fig.show()  # show webpage
