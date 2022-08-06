@@ -2,7 +2,7 @@
 
 Topic : Visualization and Quantitative Comparisons of Various Sorting Algorithms for Large Data Sets 
 								
-								Context for Our Project
+							Context for Our Project
 Everyone has their own unique way of learning. From adapting to digital coursework to staying disciplined with minimal face-to-face interactions, getting used to this new type of education may cause students to struggle — especially if their individual learning style isn’t being addressed. Gaining momentum in the 1960s through tests like the Myers-Briggs Type Indicator, the learning style theory posits that different students learn best when information is presented to them in a particular way. The learning style theory was popularized in 1992 when Fleming and Mills suggested a new model of learning. The VARK Model is used to explain the different ways that students learn - Visual, Auditory, Reading-Writing and Kinesthetic. 
 
 Visual learning refers to a mode of learning where students rely on graphic aids to remember and learn material. Visual learners can easily visualize objects, have a great sense of balance and alignment, are very color-oriented and can effortlessly envision imagery. Visual learners learn best by color-coding their notes, making to-do lists and using concept maps to organize their thoughts.
