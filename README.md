@@ -51,4 +51,7 @@ What we’ve done so far:
 4.	We have defined scope and deliverables for post-MVP iterations.
 5.	Created a mock-up of the MVP’s interface:
 
+
+![image](https://user-images.githubusercontent.com/72497582/183259362-3a99eaf9-762a-4393-8857-9a93caa2b9f1.png)
+
  
