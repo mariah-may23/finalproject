@@ -1,42 +1,64 @@
-
-# Function to find the partition position
-def partition(array, low, high):
-    # Choose the rightmost element as pivot
-    pivot = array[high]
-
-    # Pointer for greater element
-    i = low - 1
-
-    # Traverse through all elements
-    # compare each element with pivot
-    for j in range(low, high):
-        if array[j] <= pivot:
-            # element smaller than pivot is found
-            # swap it with the greater element pointed by i
-            i = i + 1
-
-            # Swapping element at i with element at j
-            (array[i], array[j]) = (array[j], array[i])
-
-    # Swap the pivot element with the greater element specified by i
-    (array[i + 1], array[high]) = (array[high], array[i + 1])
-
-    # Return the position from where partition is done
-    return i + 1
+from collections import deque
 
 
-# Function to perform quicksort
-def quick_sort(array, low, high):
-    if low < high:
-        # Find pivot element such that
-        # element smaller than pivot are on the left
-        # element greater than pivot are on the right
-        pi = partition(array, low, high)
-
-        # Recursive call on the left of pivot
-        quick_sort(array, low, pi - 1)
-
-        # Recursive call on the right of pivot
-        quick_sort(array, pi + 1, high)
+def swap(A, i, j):
+    temp = A[i]
+    A[i] = A[j]
+    A[j] = temp
 
 
+def partition(a, start, end):
+    # Pick the rightmost element as a pivot from the list
+    pivot = a[end]
+
+    # elements less than the pivot will go to the left of `pIndex`
+    # elements more than the pivot will go to the right of `pIndex`
+    # equal elements can go either way
+    pIndex = start
+
+    # each time we find an element less than or equal to the pivot,
+    # `pIndex` is incremented, and that element would be placed
+    # before the pivot.
+    for i in range(start, end):
+        if a[i] <= pivot:
+            swap(a, i, pIndex)
+            pIndex = pIndex + 1
+
+    # swap `pIndex` with pivot
+    swap(a, pIndex, end)
+
+    # return `pIndex` (index of the pivot element)
+    return pIndex
+
+
+# Iterative Quicksort routine
+def iterativeQuicksort(a):
+    # create a stack for storing sublist start and end index
+    stack = deque()
+
+    # get the starting and ending index of a given list
+    start = 0
+    end = len(a) - 1
+
+    # push the start and end index of the array into the stack
+    stack.append((start, end))
+
+    # loop till stack is empty
+    while stack:
+
+        # remove top pair from the list and get sublist starting
+        # and ending indices
+        start, end = stack.pop()
+
+        # rearrange elements across pivot
+        pivot = partition(a, start, end)
+
+        # push sublist indices containing elements that are
+        # less than the current pivot to stack
+        if pivot - 1 > start:
+            stack.append((start, pivot - 1))
+
+        # push sublist indices containing elements that are
+        # more than the current pivot to stack
+        if pivot + 1 < end:
+            stack.append((pivot + 1, end))
