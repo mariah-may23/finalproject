@@ -85,7 +85,7 @@ idx = 0
 
 # create dataframe
 df = pd.DataFrame(
-    dict(Click_To_View=['MergeSort', 'QuickSort', 'BubbleSort', 'Insertion Sort', 'RadixSort', 'Counting Sort'],
+    dict(Sorting=['MergeSort', 'QuickSort', 'BubbleSort', 'Insertion Sort', 'RadixSort', 'Counting Sort'],
          TimeComplex=['LINEARITHMIC (nlogn)', 'LINEARITHMIC (nlogn)', 'QUADRATIC (n^2)',
                       'QUADRATIC (n^2)', 'LINEAR (n)', 'LINEAR (n)'],
          Time=timeTaken,
@@ -99,7 +99,7 @@ df = pd.DataFrame(
     'hover_name' allows to to store a title for the bar when it is hovered over
 """
 # timeTaken = timeTaken.sort()
-fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='Click_To_View',
+fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='Sorting',
              labels={'x': 'Sorting Algorithms', 'y': 'Time (ms)'},
              hover_name='TimeComplex',
              color_discrete_sequence=["lightseagreen", "lightseagreen", "lightskyblue", "lightskyblue", "lemonchiffon",
