@@ -102,8 +102,8 @@ df = pd.DataFrame(
 fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='Sorting',
              labels={'x': 'Sorting Algorithms', 'y': 'Time (ms)'},
              hover_name='TimeComplex',
-             color_discrete_sequence=["lightseagreen", "lightseagreen", "lightskyblue", "lightskyblue", "lemonchiffon",
-                                      "lemonchiffon"],
+             color_discrete_sequence=["lightseagreen", "lightseagreen", "lightskyblue", "lightskyblue", "palevioletred",
+                                      "palevioletred"],
              # animation_frame="Year"
 
              )
