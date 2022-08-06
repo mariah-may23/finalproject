@@ -1,23 +1,29 @@
 # import the necessary libraries
 import copy
+import time
 
 import pandas as pd
-import time
 import plotly.express as px
 
-
 from bubble import bubbleSort
-from mergeSort import mergeSort
 from counting import count_sort
-from radix import radixSort
-from quicksort import iterativeQuicksort
 from insertion import insertionSort
+from mergeSort import mergeSort
+from quicksort import iterativeQuicksort
+from radix import radixSort
 
 # store algorithms to be used
 SortingAlgo = ['MergeSort', 'QuickSort', 'BubbleSort', 'Insertion Sort', 'RadixSort', 'Counting Sort']
 
-columns = ["convicts", "year"]
+# FIXME why do we need this variable? It's not used anywhere
+# columns = ["convicts", "year"]
+
+# TODO output the chosen file name here
 file = pd.read_csv("Caste.csv")
+
+# TODO how are we checking that the column is not a string???
+
+# TODO output the chosen column here
 numbers = file.convicts.tolist()
 
 numbers_deep = copy.deepcopy(numbers)
@@ -28,6 +34,7 @@ mergeSort(numbers)
 
 end = time.time()
 merge = (end - start) * 1000
+# FIXME get rid of the printing?
 print("Merge total", merge)
 
 numbers = numbers_deep
@@ -37,6 +44,7 @@ start = time.time()
 bubbleSort(numbers)
 end = time.time()
 bubble = (end - start)
+# FIXME get rid of the printing?
 print("Bubble total", bubble)
 
 numbers = numbers_deep
@@ -45,6 +53,7 @@ start = time.time()
 count_sort(numbers)
 end = time.time()
 count = (end - start) * 1000
+# FIXME get rid of the printing?
 print("Count total", count)
 
 numbers = numbers_deep
@@ -53,6 +62,7 @@ start = time.time()
 radixSort(numbers)
 end = time.time()
 radix = (end - start) * 1000
+# FIXME get rid of the printing?
 print("Bucket total", radix)
 
 numbers = numbers_deep
@@ -61,6 +71,7 @@ start = time.time()
 iterativeQuicksort(numbers)
 end = time.time()
 quick = (end - start)
+# FIXME get rid of the printing?
 print("Quick total", quick)
 
 numbers = numbers_deep
@@ -69,6 +80,7 @@ start = time.time()
 insertionSort(numbers)
 end = time.time()
 insertion = (end - start) * 1000
+# FIXME get rid of the printing?
 print("Insertion total", insertion)
 
 # store times
@@ -89,7 +101,7 @@ df = pd.DataFrame(
          TimeComplex=['LINEARITHMIC (nlogn)', 'LINEARITHMIC (nlogn)', 'QUADRATIC (n^2)',
                       'QUADRATIC (n^2)', 'LINEAR (n)', 'LINEAR (n)'],
          Time=timeTaken,
-         #Year=[min_year, min_year + buckets, min_year + buckets * 2, min_year + buckets * 3, min_year + buckets * 4,max_year]
+         # Year=[min_year, min_year + buckets, min_year + buckets * 2, min_year + buckets * 3, min_year + buckets * 4,max_year]
          ))
 
 # creating the figure
@@ -98,6 +110,8 @@ df = pd.DataFrame(
     'labels' allows you to name the axis
     'hover_name' allows to to store a title for the bar when it is hovered over
 """
+
+# FIXME clean up
 # timeTaken = timeTaken.sort()
 fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='Sorting',
              labels={'x': 'Sorting Algorithms', 'y': 'Time (ms)'},
@@ -108,11 +122,13 @@ fig = px.bar(df, x=SortingAlgo, y=timeTaken, color='Sorting',
 
              )
 
-
+# TODO why would we sort the values with an internal pandas sort algorithm to output the text file???
+#  this feature does not seem to provide any value or be relevant to the core idea of the project
 sorted_df = file.sort_values(["convicts"], ascending=True, inplace=False)
 sorted_df.to_csv("Sorted_csv.csv")
 
-fig.show()  # show webpage
+# FIXME why is there a call to show the page two times?
+# fig.show()  # show webpage
 fig.update_layout(legend=dict(font=dict(family="Courier", size=17, color="black"), orientation="h",
                               yanchor="bottom",
                               y=1.00,

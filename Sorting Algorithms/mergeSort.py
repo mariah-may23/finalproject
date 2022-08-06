@@ -1,6 +1,4 @@
-import time
 def mergeSort(numbers):
-
     if len(numbers) > 1:
 
         # Finding the mid of the array
