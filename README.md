@@ -26,6 +26,7 @@ Problem: The main aim of this project is to be able to build an educational, vis
 
 Solution: We want to design an visual tool for sorting algorithms that not only has the preliminary features of the prevalent online websites for visualizing algorithm i.e. understanding how the algorithms work by showing a step by step breakdown, but we want to take a step ahead and allow the users to see which algorithm would work better for their data sets based on a comparison chart. Our ultimate goal is to be able to implement basic visualizations along with comparisons specific to their data set and further, be able to implement a side-to-side visualization tool to help them understand the algorithms better. Our tool will allow a user to easily compare the performance of different algorithms on different inputs. We understand that the undertaking of this project is ambitious and therefore have divided our projects into MVP and stretch goals dependent on the progress of our project as time permits.
 
+![image](https://user-images.githubusercontent.com/110204529/183303895-7ba4b1df-9e03-41e0-8f2a-976b53a7e5c3.png)
 
 							Scope of this Project
 
