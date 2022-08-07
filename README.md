@@ -36,7 +36,8 @@ More specifically, we intend to look at six key algorithms belonging to three di
 3. Quadratic – insertion sort and bubble sort. 
 
 Though there are many more classes of algorithms based on this criterion, we believe that examination of algorithms belonging to these unique categories will provide a diverse view of varying runtimes. 
-	Time permitting, this tool can be expanded to include more algorithms in other classes for the purpose of comparison to expand the range of complexities investigated. Potentially, we will further develop our tool to include algorithmic specific visuals to aid in the display of any algorithm. For example, this may include creating buckets to better explain distribution of numerical elements in bucket sort. It may also include the demonstration of breaking an original array into singular fragments so they may be placed back together in ascending order for merge sort. These more intricate visualization ideas could further supplement the algorithms we wish to examine and would serve to create a further comprehensive tool.
+
+Time permitting, this tool can be expanded to include more algorithms in other classes for the purpose of comparison to expand the range of complexities investigated. Potentially, we will further develop our tool to include algorithmic specific visuals to aid in the display of any algorithm. For example, this may include creating buckets to better explain distribution of numerical elements in bucket sort. It may also include the demonstration of breaking an original array into singular fragments so they may be placed back together in ascending order for merge sort. These more intricate visualization ideas could further supplement the algorithms we wish to examine and would serve to create a further comprehensive tool.
 
 
 							Description of the Project
