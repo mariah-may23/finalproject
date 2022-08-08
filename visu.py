@@ -33,7 +33,7 @@ def plot(file: DataFrame, column: str):
 
     numbers = numbers_deep
 
-    # time bubblesort takes
+    # time bubble sort takes
     start = time.time()
     bubbleSort(numbers)
     end = time.time()
@@ -93,7 +93,7 @@ def plot(file: DataFrame, column: str):
     # create dataframe
     df = pd.DataFrame(
         dict(Sorting=['MergeSort', 'QuickSort', 'BubbleSort', 'Insertion Sort', 'RadixSort', 'Counting Sort'],
-             TimeComplex=['LINEARITHMIC (nlogn)', 'LINEARITHMIC (nlogn)', 'QUADRATIC (n^2)',
+             TimeComplex=['LINEARITHMIC (n log(n))', 'LINEARITHMIC (n log(n))', 'QUADRATIC (n^2)',
                           'QUADRATIC (n^2)', 'LINEAR (n)', 'LINEAR (n)'],
              Time=timeTaken,
              # Year=[min_year, min_year + buckets, min_year + buckets * 2, min_year + buckets * 3, min_year + buckets * 4,max_year]
