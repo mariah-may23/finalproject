@@ -1,8 +1,10 @@
+# import the dependencies
 import numpy as np
 import pandas as pd
 import typer
 from pandas import DataFrame
 
+# import the benchmark graph module
 from visu import plot
 
 

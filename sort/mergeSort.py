@@ -1,4 +1,4 @@
-def mergeSort(numbers):
+def merge_sort(numbers):
     if len(numbers) > 1:
 
         # Finding the mid of the array
@@ -11,10 +11,10 @@ def mergeSort(numbers):
         R = numbers[mid:]
 
         # Sorting the first half
-        mergeSort(L)
+        merge_sort(L)
 
         # Sorting the second half
-        mergeSort(R)
+        merge_sort(R)
 
         i = j = k = 0
 

@@ -32,7 +32,7 @@ def partition(a, start, end):
 
 
 # Iterative Quicksort routine
-def iterativeQuicksort(a):
+def quicksort(a):
     # create a stack for storing sublist start and end index
     stack = deque()
 
