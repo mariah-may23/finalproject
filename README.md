@@ -79,7 +79,7 @@ understand the algorithms better. Our tool will allow a user to easily compare t
 on different inputs. We understand that the undertaking of this project is ambitious and therefore have divided our
 projects into MVP and stretch goals dependent on the progress of our project as time permits.
 
-https://gifer.com/en/gifs/sorting-algorithm
+https[](https://github.com/mariah-may23/finalproject/blob/main/gif.gif)
 
 ## Scope
 
