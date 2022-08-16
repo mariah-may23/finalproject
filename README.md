@@ -81,9 +81,6 @@ projects into MVP and stretch goals dependent on the progress of our project as 
 
 
 
-![](https://github.com/mariah-may23/finalproject/blob/main/gif.gif)
-
-
 ## Scope
 
 We will examine various sorting algorithms for numerical datasets.
@@ -105,12 +102,9 @@ array into singular fragments so they may be placed back together in ascending o
 intricate visualization ideas could further supplement the algorithms we wish to examine and would serve to create a
 further comprehensive tool.
 
-## Description
+## Analysis											
 
-
-
-Analysis											
-Getting Started
+## Getting Started
 
 When our group met to discuss ideas for the final project we realized that we were facing the same question over the course of CS5800 – how can we improve our understanding of algorithms presented in the course, how can we get more hands-on practice with them, or put in programmer slang, – how can we grok the algorithms. 
 
@@ -125,7 +119,7 @@ We have created a mock-up of the interface of the benchmark:
 
 All remaining features were chosen to be stretch goals after we successfully implement the MVP. We decided to practice a small-scale team style of development, uploading our code to GitHub without pull requests and doing pair programming over zoom to enhance productivity and simplify time management.
 
-Creating the Benchmark Graph
+## Creating the Benchmark Graph
 First, to choose the visualization library to best fit our needs, we picked NumPy, Pandas x Matplotlib, and Plotly and tested each library for how fast and how close we can implement a bar chart we put together as an interface mockup. NumPy turned out to be lacking in features to implement detailed bar charts as we wanted, while Matplotlib and Plotly both were great options and allowed for all the features that we needed. Between Plotly and Matplotlib, Plotly looked like the best candidate since it has additional features such as displaying the results on the interactive webpage, showing additional information for each bar on mouse hover, and allowing to add buttons to hide/show the relevant bar charts. We created a Proof of Concept implementation with Plotly and chose it as a framework to work with in this phase of the project.
 We initially decided to use pre-existing implementations of the algorithms and test them out using small inputs for the code. We realized that the existing implementations would not be ideal for handling large datasets so we recoded the algorithm using a uniform template for inputs as well as ensuring they can work on large data sets of any given size. Some things we needed to account for was using iterative methods over recursive to avoid reaching memory mark and using data structures that used minimal space for the dataset. 
 
@@ -138,7 +132,7 @@ Based on the need for a proper visualizing tool and to analyze the different wor
 
 After achieving our MVP, our major motivation was to be able to sort and display data for any industry, any field. To this end, we used CSVs from transportation, health, jail records, and insurance collections from Kaggle and hooked them to our code as feeder inputs for our algorithm. Our program was able to efficiently sort data, display the running time of different algorithms as well as produce an output file based on the most efficient algorithm.
 
-Limitations
+## Limitations
 
 In the early stages of building our tool, we majorly focused on designing for the visual aspect of it. Initially, we ran into several issues concerning the look of our interface, including:
 
@@ -152,7 +146,7 @@ The datasets we used when building the interface were all relatively small. Befo
 
 Originally, the quicksort algorithm used a recursive approach. The initial datasets did not cause this error because the function called itself fewer times than the maximum recursive depth. This differs from larger datasets, which need to call the function more times. When tested with large data, the IDE raised this error to protect against stack overflow that would arise in an infinite recursion. To prevent this error, we decided to use a quicksort algorithm with an iterative approach. This new approach did not raise any errors.  
 
-Finding the Data
+## Finding the Data
 
 We sourced our data from Kaggle which is an open source site with publicly available data sets used in many software engineering development projects. Because there were so many formats for usable data ranging from csv, json, sql, etc., we had a plethora of options available for our data acquisition process.
  
@@ -160,7 +154,7 @@ We leveraged data sets ranging from convict data, insurance data, population dat
 
 The data was fed into the application as a csv file along with the column to sort. Both of these parameters were then passed to a plot function that would take in the column to be sorted along with the file stored as a data frame. The plot function would then apply each of the predefined sorting algorithms to the selected column in the csv dataset.
 
-Creating the Command-Line Interface
+## Creating the Command-Line Interface
 To provide ourselves and our users a way to comfortably use our application, we decided to implement a command-line interface (CLI).
 This was the list of features that we’ve prioritized for our CLI to have:
 Take a path to the .csv file from the user as an argument and pass the path to the csv-reader
@@ -170,20 +164,18 @@ Since we were working in the results- and speed-oriented style, we decided to lo
 Our choice was the CLI library called Typer. Typer provides out-of-the-box argument parsing, API for error handling, and simple style-customization of the command-line output (e.g. adding colors and font styles). It fit perfectly for our task.
 Additionally, we implemented an error-handling logic for the file path and column name. Specifically, we are checking that the given path is correct and that the given column exists in the provided .csv file. Also, within the current scope of the project, we decided to limit sorting to only integer numerical values. To that end, we added another error check for the data type of the column.
 Though we’ve only used a small subset of all the features that Typer offers, the ease of use that it opens prompts us to continue using this library in the consequent projects that our team makes.
-Creating the Sorting Visualizer
+## Creating the Sorting Visualizer
+![](https://github.com/mariah-may23/finalproject/blob/main/gif.gif)
 
-	After achieving our MVP, which was to create a basic comparator of the sorting time taken to sort the csv data sets. We achieved that, as described above, by showing a basic bar graph representation of the various sorting time taken by the algorithms. The next step was to actually develop the visualizer. 
+	
+After achieving our MVP, which was to create a basic comparator of the sorting time taken to sort the csv data sets. We achieved that, as described above, by showing a basic bar graph representation of the various sorting time taken by the algorithms. The next step was to actually develop the visualizer. It was challenging initially to come up with a proper strategy for the implementation. The first choice was between the UI for the visualizer. Tkinter, was an easy to understand and apply UI but the biggest hurdle came when trying to implement algorithms that did not sort in place and required extra memory handling. Moreover, the GUI did not work smoothly for datasets greater than 200. 
 
-	It was challenging initially to come up with a proper strategy for the implementation. The first choice was between the UI for the visualizer. Tkinter, was an easy to understand and apply UI but the biggest hurdle came when trying to implement algorithms that did not sort in place and required extra memory handling. Moreover, the GUI did not work smoothly for datasets greater than 200. 
-
+	
 So, scratching the implementation right from the base, we turned to PyGame - the graphical package used to design games in Python. It was definitely a learning curve with the package, but the quality and quantity of sorting took a big leap. It was easier to implement the setup for the algorithm dataset but the real challenge was to create a uniform platform for the implementation of different classes of algorithms handling both in-place and extra memory-requiring algorithms.  The sorting algorithms had to be reformed to take in additional inputs for the graphical representation of various data being sorted at every step. We were able to refactor the code to show a proper visualization of data being sorted in ascending order. The visualizer is shown below.
 
 
 
-
-
-
-Refactoring
+## Refactoring
 
 To make our code more readable and easy to work with – to run it as well as to implement new features, we’ve completed a refactoring. 
 
@@ -195,7 +187,7 @@ For the visu module, we decided to stick with one function to plot the benchmark
 We cleaned up our code from the unnecessary comments and code used for testing. On the other hand, we added new comments to clarify certain procedures and commands within the project. We provided naming clarity to our variables and functions and made sure that each of the names follows the Python naming conventions.
 
 
-Conclusion										
+## Conclusion										
 
 In conclusion the team was able to successfully validate the problem statement and design an application to visualize sorting algorithms. Due to time constraints, we took a minimum viable product approach to include the critical functionality needed to demo a usable version of the tool. Some limitations of our project include :
 
